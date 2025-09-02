@@ -112,19 +112,6 @@
 
 }
 
-/* === Custom rules for CS180 Project 0 === */
-img {
-  max-height: 500px;
-  width: auto;        
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-#part3 img {
-  transform: rotate(90deg);
-}
-
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
@@ -428,3 +415,17 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+/* === Custom rules for CS180 Project 0 === */
+img {
+  max-height: 500px;
+  width: auto;        
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+#part3 img {
+  transform: rotate(90deg);
+}
+
