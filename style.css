@@ -88,4 +88,5 @@ img {
 /* ===== Spécifique au GIF du Dolly Zoom ===== */
 #part3 img {
   transform: rotate(90deg);
+  max-height: 300px;
 }
