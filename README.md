@@ -1,16 +1,14 @@
 # Gabriel SAVINAUD - Computer Vision CS180
 UC Berkeley - CS180 Projects
 
-# Gabriel Savinaud
-
 ## 🎓 About Me
-I am an exchange student at **UC Berkeley (Haas & EECS)** for the 2025 academic year, currently enrolled in **CS180/280A: Introduction to Computer Vision and Computational Photography** [oai_citation:0‡Syllabus.pdf](file-service://file-NBBxeoxJqsM6gbzfdpYiy3).  
+I am an exchange student at **UC Berkeley (Haas & EECS)** for the 2025 academic year, currently enrolled in **CS180/280A: Introduction to Computer Vision and Computational Photography**.  
 My academic focus lies at the intersection of **computer vision, robotics, and applied AI**, with hands-on projects that combine image analysis, generative models, and real-world applications.
 
 ## 🚀 Current Projects
 - **Tech at ACE**  
   Founder of a fast-growing media brand covering **AI, robotics, and emerging technologies**.  
-  Active on TikTok, Instagram, X, LinkedIn, and YouTube, Tech at ACE aims to **simplify deep tech for a broad audience** and has already reached thousands of followers worldwide.
+  Active on TikTok, Instagram, X, LinkedIn, Facebook and YouTube, Tech at ACE aims to **simplify deep tech for a broad audience** and has already reached thousands of followers worldwide.
 
 - **Robotics for Fast-Food Automation**  
   Exploring how **robotic arms and AI-driven systems** can automate fast-food and dark kitchen operations.  
@@ -29,8 +27,8 @@ My academic focus lies at the intersection of **computer vision, robotics, and a
 4. Collaborate with fellow students and researchers on **innovative robotics and AI projects**.
 
 ## 📫 Connect
-- **Tech at ACE**: [TikTok](https://www.tiktok.com) | [Instagram](https://www.instagram.com) | [LinkedIn](https://www.linkedin.com)  
-- **Email**: gabriel.savinaud@example.com  
+- **Tech at ACE**: [Tech at ACE](https://www.tiktok.com/@techatace?lang=fr)
+- **Email**: gabriel.savinaud@edhec.com  
 - **GitHub**: [gabriel93140](https://github.com/gabriel93140)
 
 ---
