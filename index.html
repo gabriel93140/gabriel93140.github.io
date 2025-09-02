@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS180 – Project 0: Becoming Friends with Your Camera</title>
+  <style>
+    :root {
+      --bg: #fafafa; --text: #111; --muted: #666; --card: #fff; --border: #e7e7e7;
+      --accent: #1b63ff;
+    }
+    html, body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    header { padding: 24px; text-align: center; }
+    h1 { margin: 0 0 4px; font-size: 1.75rem; }
+    h2 { margin: 28px 0 12px; font-size: 1.35rem; }
+    h3 { margin: 20px 0 8px; font-size: 1.05rem; color: var(--muted); }
+    p.lead { margin: 0; color: var(--muted); }
+
+    main { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 720px) { .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+    figure { margin: 0; }
+    img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid var(--border); }
+    figcaption { margin-top: 8px; font-size: 0.92rem; color: var(--muted); }
+
+    .caption { color: var(--muted); font-size: 0.95rem; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #f2f2f2; border: 1px solid var(--border); border-radius: 6px; padding: 0 6px; font-size: 0.9rem; }
+    .codebox { background: #0f172a; color: #e5e7eb; border-radius: 10px; padding: 14px; overflow: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; }
+    footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Project 0 — Becoming Friends with Your Camera</h1>
+    <p class="lead">CS180: Intro to Computer Vision & Computational Photography</p>
+  </header>
+
+  <main>
+    <section class="card" id="overview">
+      <h2>Overview</h2>
+      <p>
+        This page presents my results for Project 0. The goal is to build intuition for how <em>perspective</em> depends on
+        camera <strong>position</strong> (center of projection) and how changing <strong>zoom</strong>/focal length affects the field of view
+        but not the underlying perspective. I captured three sets of images: (1) a selfie comparison, (2) architectural
+        perspective compression, and (3) a <em>dolly zoom</em> animation.
+      </p>
+    </section>
+
+    <section class="card" id="part1">
+      <h2>Part 1 — Selfie: Wrong vs Right</h2>
+      <div class="grid two">
+        <figure>
+          <img src="images/selfie_bad.jpg" alt="Selfie shot from very close (distorted)">
+          <figcaption><strong>Close-up (wrong way):</strong> shot from very near the face. The nose/forehead appear enlarged relative to the ears.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/selfie_good.jpg" alt="Selfie shot while stepping back and zooming to match face size">
+          <figcaption><strong>Step back + zoom (right way):</strong> I moved back and zoomed to match face size. Proportions look more natural.</figcaption>
+        </figure>
+      </div>
+      <h3>Observation</h3>
+      <p>
+        The difference in appearance is explained by <strong>perspective geometry</strong>. When the camera is close, distances from the
+        camera to facial features vary a lot (nose ≪ ears), so perspective exaggeration makes the nose look larger. When I step
+        back, those distance ratios shrink and the face looks flatter and more realistic. Importantly, <em>zooming does not change
+        perspective</em>; it only narrows the field of view. The change in perspective comes solely from the <strong>camera position</strong>.
+      </p>
+    </section>
+
+    <section class="card" id="part2">
+      <h2>Part 2 — Architectural Perspective Compression</h2>
+      <div class="grid two">
+        <figure>
+          <img src="images/building_far_zoom.jpg" alt="Far position with strong zoom">
+          <figcaption><strong>Far + zoom:</strong> shot from far away using strong zoom to frame the scene.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/building_close_wide.jpg" alt="Close position with wide angle">
+          <figcaption><strong>Close + wide:</strong> walked forward and used a wide field of view to keep a similar subject size.</figcaption>
+        </figure>
+      </div>
+      <h3>Observation</h3>
+      <p>
+        From the distant viewpoint, the background looks <em>compressed</em>—objects at different depths appear closer together. From the
+        nearby wide-angle viewpoint, parallel lines diverge more and depth feels exaggerated. Again, this is driven by the <strong>change
+        in camera position</strong>; the focal length only controls framing.
+      </p>
+    </section>
+
+    <section class="card" id="part3">
+      <h2>Part 3 — Dolly Zoom ("Vertigo" Shot)</h2>
+      <figure>
+        <img src="images/dolly_zoom.gif" alt="Animated dolly zoom where subject size remains constant while background warps">
+        <figcaption>Animated GIF assembled from still frames <code>dolly_01.jpg … dolly_10.jpg</code> by moving back and zooming in so the subject size stays constant.</figcaption>
+      </figure>
+      <h3>Observation</h3>
+      <p>
+        Keeping the subject at a constant image size while changing the camera position forces the background to change scale: it
+        appears to stretch or compress. This creates the classic cinematic vertigo effect and visually separates <em>framing</em> from
+        <em>perspective</em>.
+      </p>
+      <details>
+        <summary><strong>How I built the GIF</strong> (click)</summary>
+        <p class="caption">I resized frames to a common size and exported an animated GIF. See the code snippet below if you want to reproduce.</p>
+      </details>
+    </section>
+
+    <section class="card" id="tech-notes">
+      <h2>Technical Notes</h2>
+      <ul>
+        <li>Device: smartphone camera; exposure and focus locked when possible.</li>
+        <li>Framing: used on-screen grid lines to match the subject size across shots.</li>
+        <li>Basic edits: mild JPEG compression for web (quality ~85), no filters.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="repro">
+      <h2>Reproducibility — GIF assembly code</h2>
+      <div class="codebox"><pre>from PIL import Image
+import glob
+
+paths = sorted(glob.glob("images/dolly_*.jpg"))  # dolly_01.jpg ... dolly_10.jpg
+frames = [Image.open(p).convert("RGB") for p in paths]
+
+# Optionally normalize to the smallest frame size
+w = min(im.width for im in frames)
+h = min(im.height for im in frames)
+frames = [im.resize((w, h)) for im in frames]
+
+frames[0].save(
+    "images/dolly_zoom.gif",
+    save_all=True,
+    append_images=frames[1:],
+    duration=120,  # ms per frame
+    loop=0,
+    optimize=True,
+)
+print("Saved to images/dolly_zoom.gif")</pre></div>
+      <p class="caption">Run this once after placing your still frames in <span class="kbd">images/</span>.</p>
+    </section>
+
+    <footer>
+      <p>© 2025 — CS180 Project 0. All photos by the author.</p>
+    </footer>
+  </main>
+</body>
+</html>
