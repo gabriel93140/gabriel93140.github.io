@@ -76,10 +76,10 @@ footer {
 /* ===== Images ===== */
 img {
   max-width: 100%;
-  max-height: 500px;   /* hauteur max */
+  max-height: 500px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   object-fit: contain;
   border-radius: 6px;
   border: 1px solid #ddd;
@@ -87,5 +87,5 @@ img {
 
 /* ===== Spécifique au GIF du Dolly Zoom ===== */
 #part3 img {
-  transform: rotate(-90deg); /* redresse ton GIF */
+  transform: rotate(90deg);
 }
