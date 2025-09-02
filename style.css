@@ -112,6 +112,18 @@
 
 }
 
+/* === Custom rules for CS180 Project 0 === */
+img {
+  max-height: 500px;
+  width: auto;        
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+#part3 img {
+  transform: rotate(90deg);
+}
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
